@@ -1,0 +1,71 @@
+{
+	"pages": [{
+		"path": "pages/index/index",
+		"style": {
+			"app-plus": {
+				//去掉原生导航栏
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "black"
+		}
+	}, {
+		"path": "pages/addLeave/addLeave",
+		"style": {
+			"navigationBarTitleText": "添加请假",
+			"navigationBarBackgroundColor":"#38b48b"
+		}
+	}, {
+		"path": "pages/viewLeaves/viewLeaves",
+		"style": {
+			"app-plus": {
+				//去掉原生导航栏
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "black"
+		}
+
+	}, {
+		"path": "pages/QRCode/QRCode",
+		"style": {
+			"app-plus": {
+				//去掉原生导航栏
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "black"
+		}
+
+	}, {
+		"path": "pages/addStudentInfo/addStudentInfo",
+		"style": {
+			"navigationBarTitleText": "设置个人信息",
+			"navigationBarBackgroundColor":"#38b48b"
+		}
+
+	}, {
+		"path": "pages/checkSuccess/checkSuccess",
+		"style": {
+			"app-plus": {
+				//去掉原生导航栏
+				"titleNView": false
+			},
+			"navigationBarTextStyle": "black"
+		}
+
+	}],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}
