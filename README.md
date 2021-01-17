@@ -45,4 +45,4 @@
 
 <img src="images/2551610871203_.pic_hd.jpg" alt="2551610871203_.pic_hd" style="zoom:20%;" />
 
-<img src="images/2561610871204_.pic_hd.jpg" alt="2561610871204_.pic_hd" style="zoom:20%;" /># leave-school
+<img src="images/2561610871204_.pic_hd.jpg" alt="2561610871204_.pic_hd" style="zoom:20%;" />
