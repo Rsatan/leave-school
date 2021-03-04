@@ -34,23 +34,6 @@
 			"navigationBarTextStyle": "black"
 		}
 
-	}, {
-		"path": "pages/addStudentInfo/addStudentInfo",
-		"style": {
-			"navigationBarTitleText": "设置个人信息",
-			"navigationBarBackgroundColor":"#38b48b"
-		}
-
-	}, {
-		"path": "pages/checkSuccess/checkSuccess",
-		"style": {
-			"app-plus": {
-				//去掉原生导航栏
-				"titleNView": false
-			},
-			"navigationBarTextStyle": "black"
-		}
-
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

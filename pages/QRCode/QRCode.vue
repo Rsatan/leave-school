@@ -94,7 +94,21 @@
 				that.refreshCurrDate();
 			}, 1000)
 		},
+		
+		onBackPress(options) {
+				if (options.from === 'navigateBack') {
+					return false;
+				}
+				this.onreturn();
+				return true;
+			},
+		
 		methods: {
+			onreturn(){
+				uni.redirectTo({
+					url:'../index/index'
+				});
+			},
 			
 			viewLeaves: function() {
 				uni.navigateTo({

@@ -98,15 +98,9 @@
 		
 		<label style="display: block;font-weight: bold;">其他设置</label>
 		<image src="../../static/img/other_tips.png" style="height:81px;width: 257px;margin: 10px;border: 1px solid #ccc;"></image>
-		<checkbox-group @change="changChakan" style="margin-bottom: 10px;">
-			<label>
-				<checkbox checked="true" value="viewChakan"/>显示"查看>"
-			</label>
-		</checkbox-group>
 
 
 		<view class="sub" @click="sub">提交</view>
-		<view class="setStuInfo" @click="setStuInfo">设置学生信息（用于扫码签到）</view>
 	</view>
 </template>
 
@@ -143,7 +137,6 @@
 				state: '正在休假中',
 				type:'',
 				colorIndex: 0,
-				viewChakan:true,
 				imgFile:'',
 			}
 		},
@@ -227,7 +220,6 @@
 				obj['threeCheckDate'] = this.threeCheckDate + " " + this.threeCheckTime;
 				obj['threeCheckStatus'] = this.threeCheckStatus;
 				obj['threeCheckIdea'] = this.threeCheckIdea;
-				obj['viewChakan'] = this.viewChakan;
 				obj['state'] = this.state;
 				obj['applyDate'] = (Number(date.getMonth() + 1).toString() <= 1 ? "0" + Number(date.getMonth() + 1) : Number(date.getMonth() +
 						1)) + "-" +
@@ -252,13 +244,6 @@
 					fail: function() {
 						that.toast("提交失败，请重试", "none");
 					}
-				})
-			},
-
-			//跳转到学生信息编辑页面
-			setStuInfo: function() {
-				uni.navigateTo({
-					url: '../addStudentInfo/addStudentInfo'
 				})
 			},
 
@@ -311,15 +296,6 @@
 			bindThreeCheckTime: function(e) {
 				console.log(e.detail)
 				this.threeCheckTime = e.detail.value;
-			},
-			//显示查看多选框被单击
-			changChakan:function(e){
-				if(e.detail.value[0] == undefined){
-					this.viewChakan = false;
-				} else {
-					this.viewChakan = true;
-				}
-				console.log(this.viewChakan)
 			},
 			//实际休假时间颜色选择被单击
 			bindColor:function(e){
@@ -411,18 +387,6 @@
 		height: 45px;
 		line-height: 45px;
 		border-radius: 5px;
-	}
-
-	.setStuInfo {
-		background-color: #FFFFFF;
-		border: 1px solid #DDDEE2;
-		margin: 10px;
-		text-align: center;
-		font-size: 18px;
-		height: 45px;
-		line-height: 45px;
-		border-radius: 5px;
-		margin-bottom: 350px;
 	}
 
 	.pickerView {

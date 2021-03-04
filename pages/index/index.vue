@@ -52,7 +52,22 @@
 			this.leaves.reverse();
 			console.log(this.leaves);
 		},
+		
+		onBackPress(options) {
+				if (options.from === 'navigateBack') {
+					return false;
+				}
+				this.onreturn();
+				return true;
+			},
+		
 		methods: {
+			onreturn(){
+				uni.redirectTo({
+					url:'./index'
+				});
+			},
+			
 			//添加请假记录
 			addLeave: function() {
 				uni.navigateTo({

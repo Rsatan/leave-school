@@ -67,9 +67,7 @@
 					</view>
 					<view class="main-content-type-clearRule" style="position: relative;padding-left: 130rpx;">
 						<view style="position: absolute;top: 0px;left: 0px;">销假规则：</view>
-						<view style="color:#F79A0D;margin-left: -10rpx;">离校请假需要销假，非离校请假无需销假
-							<text style="color: #2C8CF0;margin-left: 5px;" v-if="leave.viewChakan">&nbsp;&nbsp;查看 ></text>
-						</view>
+						<view style="color:#F79A0D;margin-left: -10rpx;">离校请假需要销假，非离校请假无需销假</view>
 					</view>
 					<view class="main-content-type-leaveDate" style="position: relative;padding-left: 185rpx;">
 						<view style="position: absolute;top: 0px;left: 0px;">实际休假时间：</view>
@@ -182,6 +180,13 @@
 			}
 		},
 		
+		onBackPress(options) {
+				if (options.from === 'navigateBack') {
+					return false;
+				}
+				this.onreturn();
+				return true;
+			},
 		
 		onLoad() {
 			var that = this;
@@ -192,7 +197,13 @@
 				that.refreshCurrDate();
 			}, 1000)
 		},
+		
 		methods: {
+			onreturn(){
+				uni.redirectTo({
+					url:'../index/index'
+				});
+			},
 			
 			QRCode: function() {
 				uni.navigateTo({
