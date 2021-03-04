@@ -128,7 +128,7 @@
 			refreshCurrDate: function() {
 				var date = new Date();
 				this.currDate = date.getFullYear() + "-" +
-					(Number(date.getMonth() + 1).toString() <= 1 ? "0" + Number(date.getMonth() + 1) : Number(date.getMonth() + 1)) +
+					(Number(date.getMonth() + 1).toString().length <= 1 ? "0" + Number(date.getMonth() + 1) : Number(date.getMonth() + 1)) +
 					"-" +
 					(date.getDate().toString().length <= 1 ? "0" + date.getDate() : date.getDate()) + " " +
 					(date.getHours().toString().length <= 1 ? "0" + date.getHours() : date.getHours()) + ":" +
@@ -152,7 +152,7 @@
 							var date = new Date();
 							that.leaves = uni.getStorageSync('todaySchoolLeaves').reverse();
 							that.leave.state = '已完成';
-							that.leave['clearDate'] = (Number(date.getMonth() + 1).toString() <= 1 ? "0" + Number(date.getMonth() + 1) : Number(date.getMonth() + 1)) + "-" + 
+							that.leave['clearDate'] = (Number(date.getMonth() + 1).toString().length <= 1 ? "0" + Number(date.getMonth() + 1) : Number(date.getMonth() + 1)) + "-" + 
 								(date.getDate().toString().length <= 1 ? "0" + date.getDate() : date.getDate()) + " " + 
 								(date.getHours().toString().length <= 1 ? "0" + date.getHours() : date.getHours()) + ":" + 
 								(date.getMinutes().toString().length <= 1 ? "0" + date.getMinutes() : date.getMinutes());
