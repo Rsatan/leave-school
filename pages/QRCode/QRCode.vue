@@ -367,7 +367,7 @@
 	
 	.check-left {
 		position: absolute;
-		width: 60px;
+		width: 70px;
 		height: 40px;
 		text-align: center;
 		font-size: 30rpx;

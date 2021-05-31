@@ -57,17 +57,17 @@
 				<view class="main-content-type">
 					<view class="main-content-type-leaveType" style="position: relative;padding-left: 140rpx;width: 30%;">
 						<view style="position: absolute;top: 0px;left: 0px;">请假类型：</view>
-						<text class="blackFont" style="margin-left: -20rpx;">
+						<text class="blackFont" style="margin-left: -20rpx;font-weight: 400;">
 							{{leave.type}}
 						</text>
 					</view>
 					
-					<view class="main-content-type-leaveSchool" style="position: absolute;left: calc(50% - 130rpx);">
+					<view class="main-content-type-leaveSchool" style="position: absolute;left: calc(50% - 130rpx);font-weight: 400;">
 						需要离校：<text class="blackFont">离校</text>
 					</view>
 					<view class="main-content-type-clearRule" style="position: relative;padding-left: 130rpx;">
 						<view style="position: absolute;top: 0px;left: 0px;">销假规则：</view>
-						<view style="color:#F79A0D;margin-left: -10rpx;">离校请假需要销假，非离校请假无需销假</view>
+						<view style="color:#F79A0D;margin-left: -10rpx;">离校请假需要销假，非离校请假无需销假 <text style="color: #2C8CF0;margin-left: 5px;">查看></text></view>
 					</view>
 					<view class="main-content-type-leaveDate" style="position: relative;padding-left: 185rpx;">
 						<view style="position: absolute;top: 0px;left: 0px;">实际休假时间：</view>
@@ -79,16 +79,18 @@
 <!-- 				<view style="color: #BDC0C5;font-size: 28rpx;margin:5px;margin-left: 22px;">请假详情</view> -->
 
 				<view class="main-content-info">
-					<view style="font-size:30rpx;margin-top: 5px;margin-bottom: 10px;color: #474C5C;">我的 请假申请</view>
+					<view style="font-size:29rpx;margin-top: 5px;margin-bottom: 10px;color: #474C5C;font-weight: 500;">我的 请假申请</view>
 					<view class="main-content-info-left">
-						<view>开始时间：</view><text>{{leave.startDate}}</text><br>
-						<view>结束时间：</view><text>{{leave.endDate}}</text><br>
+						<view class="time" style="width: auto;"><text style="color:#39f;text-align: center;padding-left: 10px;padding-right: 10px;">{{leave.countDate}}</text></view>
+						<view>开始时间：</view><text style="font-weight: 900;">{{leave.startDate}}</text><br>
+						<view>结束时间：</view><text style="font-weight: 900;">{{leave.endDate}}</text><br>
 						<view>审批流程：</view><text>共{{leave.twoCheck != '' ? (leave.threeCheck != '' ? '3' : '2') : '1'}}步 <text style="color: #2C8CF0;margin-left: 5px;">查看></text></text><br>
 						<view>紧急联系人：</view><text>{{leave.phone}}</text><br>
 						<view>请假原因：</view><text>{{leave.reason}}</text><br>
 						<view class="main-content-info-left-file" style="width: 100%;" v-if="leave.imgFile != ''"><text style="color: #9EA8B4;">附件：</text><image :src="leave.imgFile" @click="imgFileClick"></image></view><br v-if="leave.imgFile != ''">
-						<view style="margin-top: 15rpx;">发起位置：</view><text style="color: #2C8CF0;">{{leave.address}}</text><br>
+						<view style="main-content-info-left-file">发起位置：</view><text style="color: #2C8CF0;">{{leave.address}}</text><br>
 						<view>抄送人：</view><text>{{leave.cc}}</text><br>
+						<view style="color:#F79A0D;width: 100%;">本人承诺填写的信息真实有效，并对本次提交请假申请的信息真实性负责。</view>
 					</view>
 				</view>
 
@@ -862,4 +864,19 @@
 		border-top: 1px solid #EBEBEB;
 		color: #66717F;
 	}
-</style>
+	.time {
+		position: absolute;
+		z-index: 1000;
+		background: rgba(51,153,255,.1);
+		border: 1px solid #91c3fd;
+		border-radius: 1.06667vw;
+		font-weight: 700;
+		font-size: 3.73333vw;
+		text-align: center;
+		padding-bottom: 0.6vw;
+		padding-top: 0.6vw;
+		display: block;
+		right:5%;
+		
+	}
+</style> 
